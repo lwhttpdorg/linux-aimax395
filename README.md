@@ -1,6 +1,6 @@
 # linux-aimax395
 
-This is a kernel(version 7.0) maintained for the `AMD AI MAX+ 395`. `Vulkan` and `ROCm` are working properly.
+This is a kernel(version 7.1) maintained for the `AMD AI MAX+ 395`. `Vulkan` and `ROCm` are working properly.
 
 _Note: I did not modify any kernel source code. In fact, I just meticulously configured the `amd_aimax395_defconfig` for
 running local LLMs (Large Language Models) on the AMD AI MAX+ 395. You can use this configuration file to compile directly from the official Linux source code._
@@ -8,6 +8,12 @@ running local LLMs (Large Language Models) on the AMD AI MAX+ 395. You can use t
 ## 1. Compiling the Kernel
 
 ### 1.1. config
+
+```shell
+touch .scmversion
+export LOCALVERSION=""
+export LOCALVERSION_AUTO=n
+```
 
 ```shell
 make ARCH=x86_64 amd_aimax395_defconfig
@@ -22,8 +28,8 @@ make ARCH=x86_64 -j$(nproc) bindeb-pkg
 ### 1.3. install
 
 ```shell
-sudo dpkg -i ../linux-image-7.0.11*.deb
-sudo dpkg -i ../linux-headers-7.0.11*.deb
+sudo dpkg -i ../linux-image-7.1.*.deb
+sudo dpkg -i ../linux-headers-7.1.*.deb
 sudo dpkg -i ../linux-libc-dev*.deb
 ```
 
