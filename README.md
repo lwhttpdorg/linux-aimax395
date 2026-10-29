@@ -1,6 +1,6 @@
 # linux-aimax395
 
-This is a Linux 7.1 kernel configuration file prepared for `AMD AI MAX+ 395`. It is specifically configured for local AI large models, with working support for `Vulkan` and `ROCm`.
+This is a Linux kernel configuration file prepared for `AMD AI MAX+ 395`. It is specifically configured for local AI large models, with working support for `Vulkan` and `ROCm`.
 
 ## Download kernel source
 
@@ -46,8 +46,8 @@ The generated `.deb` files are created in the parent directory.
 Install the generated Debian packages:
 
 ```shell
-sudo dpkg -i ../linux-image-7.1.*.deb
-sudo dpkg -i ../linux-headers-7.1.*.deb
+sudo dpkg -i ../linux-image-*.deb
+sudo dpkg -i ../linux-headers-*.deb
 sudo dpkg -i ../linux-libc-dev*.deb
 ```
 
